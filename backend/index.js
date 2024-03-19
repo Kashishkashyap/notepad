@@ -2,19 +2,21 @@ const express = require('express');
 const auth = require('./routes/auth');
 const notes = require('./routes/notes');
 const mongoose = require('mongoose');
-var cors= require('cors');
+var cors = require('cors');
 
 const app = express();
 app.use(cors());
+const dotenv = require('dotenv');
+dotenv.config({ path: '.env' });
 
-mongoose.connect('mongodb+srv://kashyapkashish22:Jjt3GKtyXJvlh0l5@notepad.yh3s7cj.mongodb.net/', {
+mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
+db.once('open', function () {
     console.log("DataBase Connected");
 });
 
