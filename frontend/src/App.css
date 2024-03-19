@@ -13,6 +13,14 @@
   }
 }
 
+.nav-link:hover {
+  color: #0dcaf0;
+}
+
+.nav-link:focus {
+  color: #ffffff;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -22,6 +30,16 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.navbar-brand {
+  padding-top: var(--bs-navbar-brand-padding-y);
+  padding-bottom: var(--bs-navbar-brand-padding-y);
+  margin-right: var(--bs-navbar-brand-margin-end);
+  font-size: var(--bs-navbar-brand-font-size);
+  color: #0dcaf0;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 .App-link {
