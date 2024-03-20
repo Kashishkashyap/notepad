@@ -27,7 +27,9 @@ db.once('open', function () {
 app.use('/v1/api/auth', auth);
 app.use('/v1/api/notes', notes);
 
-
+app.get('/', async (req, res) => {
+    res.send("HI");
+})
 // react will run on port 3000
 app.listen(5000, () => {
     console.log("Listening on port 3000");
